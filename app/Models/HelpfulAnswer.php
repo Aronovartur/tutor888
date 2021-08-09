@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class HelpfulAnswer extends Model
 {
     use HasFactory;
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
+
+    public function answer(){
+        return $this->belongsTo(Answer::class);
+
+    }
 }

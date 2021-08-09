@@ -18,6 +18,15 @@ class CreateCoursesTable extends Migration
             $table->timestamps();
             $table->string('name');
             $table->foreignId('user_id');
+            $table->foreignId('category_id');
+            $table->string('title');
+            $table->string('slug');
+            $table->text('description');
+            $table->string('language');
+            $table->string('image');
+            $table->enum('level', ['Beginner', 'Intermediate', 'Advanced']);
+            $table->boolean('featured')->default(false);
+            $table->boolean('approved')->default(false);
             $table->integer('price');
             $table->boolean('active');
         });

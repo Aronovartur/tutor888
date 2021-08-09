@@ -16,6 +16,8 @@ class CreateCourseReviewRatingsTable extends Migration
         Schema::create('course_review_ratings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('course_id');
+            $table->decimal('average_rating');
         });
     }
 

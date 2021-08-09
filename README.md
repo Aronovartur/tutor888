@@ -28,6 +28,10 @@ laravel, VueJS VideoJS</li>
 <li>AWS integration (S3)</li>
 </ul>
 
+## what is done
+
+<ol><li>Set up database migrations: Aug 5, 2021</li></ol>
+
 ## Installation and Use ( localhost development)
 
 <ol>

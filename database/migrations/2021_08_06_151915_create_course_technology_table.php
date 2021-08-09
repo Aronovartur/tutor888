@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHelpfulAnswersTable extends Migration
+class CreateCourseTechnologyTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateHelpfulAnswersTable extends Migration
      */
     public function up()
     {
-        Schema::create('helpful_answers', function (Blueprint $table) {
+        Schema::create('course_technology', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->foreignId('user_id');
-            $table->foreignId('answer_id');
+            $table->foreignId('course_id');
+            $table->foreignId('technology_id');
+
         });
     }
 
@@ -28,6 +29,6 @@ class CreateHelpfulAnswersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('helpful_answers');
+        Schema::dropIfExists('course_technology');
     }
 }
