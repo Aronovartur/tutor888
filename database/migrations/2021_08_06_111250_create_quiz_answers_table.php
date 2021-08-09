@@ -16,6 +16,11 @@ class CreateQuizAnswersTable extends Migration
         Schema::create('quiz_answers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('question_id');
+            $table->text('answer');
+            $table->boolean('correct');
+            $table->text('explanation');
+
         });
     }
 

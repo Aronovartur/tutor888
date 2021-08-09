@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateQuestionFollowupsTable extends Migration
+class CreateSectionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,13 @@ class CreateQuestionFollowupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('question_followups', function (Blueprint $table) {
+        Schema::create('sections', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('course_id');
+            $table->string('title');
+            $table->text('objective')->nullable();
+            $table->integer('sortOrder');
         });
     }
 
@@ -26,6 +30,6 @@ class CreateQuestionFollowupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('question_followups');
+        Schema::dropIfExists('sections');
     }
 }

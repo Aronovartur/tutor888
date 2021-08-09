@@ -16,6 +16,12 @@ class CreatePaymentsTable extends Migration
         Schema::create('payments', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('course_id');
+            $table->foreignId('user_id');
+            $table->foreignId('coupon_id');
+            $table->string('payment_method');
+            $table->decimal('amount');
+
         });
     }
 

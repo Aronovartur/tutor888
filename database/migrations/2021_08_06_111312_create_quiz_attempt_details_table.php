@@ -16,6 +16,10 @@ class CreateQuizAttemptDetailsTable extends Migration
         Schema::create('quiz_attempt_details', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('attempt_id')->unsigned();
+            $table->text('question');
+            $table->text('chosen_answer');
+            $table->text('correct_answer');
         });
     }
 

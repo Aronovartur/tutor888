@@ -16,6 +16,12 @@ class CreateReviewsTable extends Migration
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('course_id');
+            $table->foreignId('user_id');
+            $table->decimal('rating',4,1);
+            $table->text('comment');
+
+
         });
     }
 

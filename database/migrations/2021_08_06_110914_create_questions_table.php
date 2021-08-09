@@ -16,6 +16,12 @@ class CreateQuestionsTable extends Migration
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('course_id');
+            $table->foreignId('user_id');
+            $table->string('slug');
+            $table->string('title');
+            $table->text('body');
+
         });
     }
 

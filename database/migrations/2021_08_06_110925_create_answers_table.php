@@ -16,6 +16,11 @@ class CreateAnswersTable extends Migration
         Schema::create('answers', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->foreignId('user_id');
+            $table->foreignId('question_id');
+            $table->text('body');
+            $table->boolean('marked_as_answer');
+
         });
     }
 
