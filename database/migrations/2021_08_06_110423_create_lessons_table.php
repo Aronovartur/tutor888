@@ -17,6 +17,12 @@ class CreateLessonsTable extends Migration
             $table->id();
             $table->timestamps();
             $table->string('name');
+            $table->foreignId('section_id');
+            $table->string('title');
+            $table->text('description')->nullable();
+            $table->boolean('preview')->default(false);
+            $table->enum('lesson_type',['lecture','quiz'])->default('lecture');
+            $table->integer('sortOrder');
 
         });
     }

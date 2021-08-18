@@ -6,6 +6,7 @@
  */
 
 // Switch between the included languages
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
 Route::get('lang/{lang}', 'LanguageController@swap');
 
@@ -15,13 +16,13 @@ Route::get('lang/{lang}', 'LanguageController@swap');
  * Frontend Routes
  * Namespaces indicate folder structure
  */
-Route::group(['prefix'=>'frontend'], function (){
+Route::group(['prefix'=>''], function (){
     //front end controllers that don't require login
 
     Route::get(
-        '/',[\App\Http\Controllers\FrontendController::class,'index']
+        '/',[FrontendController::class,'index']
     );
-    Route::get('macros', [\App\Http\Controllers\FrontendController::class, 'macros'])->name('macros');
+    Route::get('macros', [FrontendController::class, 'macros'])->name('macros');
 
     Route::get('/check/finish', 'Install\CheckController@finish')->name('check.finish');
 
